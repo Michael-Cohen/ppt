@@ -69,7 +69,13 @@ Find the draft release from the
 Pre-commit hooks run all the auto-formatters (e.g. `black`, `isort`), linters (e.g. `mypy`, `flake8`), and other quality
  checks to make sure the changeset is in good shape before a commit/push happens.
 
-You can install the hooks with (runs for each commit):
+Install `pre-commit` with:
+```sh
+poetry add pre-commit
+```
+
+
+You can then install the hooks with (runs for each commit):
 
 ```sh
 pre-commit install
