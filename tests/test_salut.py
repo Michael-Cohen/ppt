@@ -1,6 +1,10 @@
 import pytest
 
-from src.ppt.salut import wow
+from ppt.salut import say_hello_with_message, wow
+
+
+def test_say_hello_with_message() -> None:
+    assert say_hello_with_message("salut!") == "hello, the message is: salut!"
 
 
 @pytest.mark.parametrize(
