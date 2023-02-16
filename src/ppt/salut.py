@@ -14,6 +14,7 @@ def say_hello_with_message(msg: str) -> None:
 
 
 def wow(quantity: float) -> str:
+    """Diplays a Numpy array with one element."""
     return f"Numpy result: {np.array([quantity])}"
 
 

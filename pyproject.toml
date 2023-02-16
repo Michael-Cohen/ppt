@@ -32,6 +32,8 @@ packages = [
 python = ">=3.8, <4.0"
 pre-commit = "^3.0.4"
 numpy = "^1.24.2"
+pytest = "^7.2.1"
+coverage = "^7.1.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "*"
@@ -56,6 +58,9 @@ pytest-cov = "*"
 python-kacl = "*"
 pyupgrade = "*"
 tryceratops = "*"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
