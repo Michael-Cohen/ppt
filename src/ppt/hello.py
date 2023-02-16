@@ -12,8 +12,8 @@ def say_hello_with_message(msg: str) -> str:
     print(f"hello, the message is: {msg}")
 
 
-def wow(msg):
-    say_hello_with_message(f"wow: {msg}")
+def wow(quantity):
+    print(f"Numpy result: {np.array([quantity])}")
 
 if __name__ == '__main__':
     say_hello_with_message(1)
