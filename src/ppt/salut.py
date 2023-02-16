@@ -1,6 +1,7 @@
 import numpy as np
 
-def say_hello_with_message(msg: str) -> str:
+
+def say_hello_with_message(msg: str) -> None:
     """Awesome function to say hello with message.
 
     Args:
@@ -12,8 +13,9 @@ def say_hello_with_message(msg: str) -> str:
     print(f"hello, the message is: {msg}")
 
 
-def wow(quantity):
-    print(f"Numpy result: {np.array([quantity])}")
+def wow(quantity: float) -> str:
+    return f"Numpy result: {np.array([quantity])}"
 
-if __name__ == '__main__':
-    say_hello_with_message(1)
+
+if __name__ == "__main__":
+    say_hello_with_message("1")
