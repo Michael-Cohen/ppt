@@ -8,7 +8,7 @@ from src.ppt.salut import wow
     [
         (5.0, "[5.]"),
         (0.0, "[0.]"),
-        (1.0, "[-1.]")  # this last pair is purposefully wrong so we can
+        (-1.0, "[-1.]")  # this last pair is purposefully wrong so we can
         # show an example of the pytest error message
     ],
 )
