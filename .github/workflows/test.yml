@@ -3,8 +3,9 @@ name: Test
 on:
   pull_request:
   push:
+    # Re-running the Test workflow on the main branch is redundant:
     branches:
-      - "**"
+      - '!main'
 
 jobs:
   actionlint:
