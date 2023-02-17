@@ -100,3 +100,6 @@ warn_redundant_casts = true
 warn_return_any = true
 check_untyped_defs = true
 show_error_codes = true
+
+[tool.semantic_release]
+version_variable = "pyproject.toml:version"
