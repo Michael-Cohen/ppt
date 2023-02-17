@@ -16,3 +16,5 @@ jobs:
           poetry publish --build --no-interaction
       - name: Deploy docs
         run: poetry run mkdocs gh-deploy --force
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
