@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pptm"
-version = "0.0.3"
+version = "0.0.4"
 description = "A short description of the project"
 authors = [
     "Michael Cohen <me@example.com>",
