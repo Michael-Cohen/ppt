@@ -1,6 +1,6 @@
 import pytest
 
-from ppt.salut import say_hello_with_message, wow
+from pptm.salut import say_hello_with_message, wow
 
 
 def test_say_hello_with_message() -> None:
