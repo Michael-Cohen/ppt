@@ -102,4 +102,9 @@ check_untyped_defs = true
 show_error_codes = true
 
 [tool.semantic_release]
-version_variable = "pyproject.toml:version"
+version_variable = "pyproject.toml:version" # version location
+branch = "main"                             # branch to make releases of
+build_command = "poetry build"              # build dists
+upload_to_release = true                    # auto-create GitHub release
+upload_to_repository = false                # don't auto-upload to PyPI (there is a distribute.yml workflow)
+major_on_zero = "false"                     # new minor release instead of major when current major is zero          # patch release by default
