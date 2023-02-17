@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def say_hello_with_message(ms: str) -> str:
+def say_hello_with_message(msg: str) -> str:
     """Awesome function to say hello with message.
 
     Args:
@@ -10,7 +10,7 @@ def say_hello_with_message(ms: str) -> str:
     Returns:
         str: The standard sentence with your message.
     """
-    return f"hello, the message is: {ms}"
+    return f"hello, the message is: {msg}"
 
 
 def wow(quantity: float) -> str:
