@@ -1,4 +1,4 @@
-name: Autoupdate project structure
+name: Auto-update project structure
 on:
   workflow_dispatch:
   schedule:

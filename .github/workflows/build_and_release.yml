@@ -1,0 +1,49 @@
+name: Build and release
+
+on:
+  push:
+    branches: [ main ]
+  # Allow this workflow to be run manually:
+  workflow_dispatch:
+
+jobs:
+  build-and-distribute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/python-poetry-env
+
+      - name: Distribute to pypi
+        run: |
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry publish --build --no-interaction
+
+      - name: Deploy docs
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: poetry run mkdocs gh-deploy --force
+
+
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      # Check-out the repository so that the job can access it and set up Python:
+      - uses: actions/checkout@v3
+        # For semantic-release to work, access all the Git history:
+        with:
+          fetch-depth: 0
+      # Set up Python, install Poetry and install package:
+      - uses: ./.github/actions/python-poetry-env
+
+      - name: Use Python Semantic Release to prepare release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            poetry run semantic-release publish
+
+      - name: Test install from GitHub
+        run: |
+            new_pkg_version="$(poetry version | awk -F '[ =]+' '{print $2}')"
+            pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"

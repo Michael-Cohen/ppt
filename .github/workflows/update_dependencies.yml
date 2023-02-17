@@ -1,4 +1,4 @@
-name: Autoupdate dependencies
+name: Auto-update dependencies
 on:
   workflow_dispatch:
   schedule:
