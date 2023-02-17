@@ -10,7 +10,7 @@ def test_say_hello_with_message() -> None:
 @pytest.mark.parametrize(
     "quantity, result",
     [
-        (5.0, "[5.]"),
+        (4.0, "[4.]"),
         (0.0, "[0.]"),
         (-1.0, "[-1.]")  # this last pair is purposefully wrong so we can
         # show an example of the pytest error message
