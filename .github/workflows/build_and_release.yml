@@ -46,4 +46,4 @@ jobs:
       - name: Test install from GitHub
         run: |
             new_pkg_version="$(poetry version | awk -F '[ =]+' '{print $2}')"
-            pip install git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version
+            pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"
