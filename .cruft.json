@@ -9,7 +9,7 @@
       "github_username": "Michael-Cohen",
       "project_name": "ppt",
       "project_slug": "ppt",
-      "package_name": "ppt",
+      "package_name": "pptm",
       "project_short_description": "A short description of the project",
       "_template": "https://github.com/woltapp/wolt-python-package-cookiecutter"
     }

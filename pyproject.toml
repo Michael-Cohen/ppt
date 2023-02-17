@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "ppt"
-version = "0.0.1"
+name = "pptm"
+version = "0.0.5"
 description = "A short description of the project"
 authors = [
     "Michael Cohen <me@example.com>",
@@ -25,7 +25,7 @@ classifiers = [
 ]
 
 packages = [
-    { include = "ppt", from = "src" }
+    { include = "pptm", from = "src" }
 ]
 
 [tool.poetry.dependencies]
@@ -77,7 +77,7 @@ include = '\.pyi?$'
 
 [tool.pytest.ini_options]
 addopts = """\
-    --cov ppt \
+    --cov pptm \
     --cov tests \
     --cov-report term-missing \
     --no-cov-on-fail \

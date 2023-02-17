@@ -15,4 +15,6 @@ jobs:
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
       - name: Deploy docs
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         run: poetry run mkdocs gh-deploy --force

@@ -42,7 +42,7 @@ repos:
         types: [python]
       - id: mypy
         name: mypy
-        entry: poetry run mypy src/ppt
+        entry: poetry run mypy src/pptm
         require_serial: true
         language: system
         types: [python]

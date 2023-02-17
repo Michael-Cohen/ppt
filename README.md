@@ -1,8 +1,8 @@
-# ppt
+# ppt (package pptm)
 
-[![PyPI](https://img.shields.io/pypi/v/ppt?style=flat-square)](https://pypi.python.org/pypi/ppt/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ppt?style=flat-square)](https://pypi.python.org/pypi/ppt/)
-[![PyPI - License](https://img.shields.io/pypi/l/ppt?style=flat-square)](https://pypi.python.org/pypi/ppt/)
+[![PyPI](https://img.shields.io/pypi/v/pptm?style=flat-square)](https://pypi.python.org/pypi/pptm/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pptm?style=flat-square)](https://pypi.python.org/pypi/pptm/)
+[![PyPI - License](https://img.shields.io/pypi/l/pptm?style=flat-square)](https://pypi.python.org/pypi/pptm/)
 [![Coookiecutter - Wolt](https://img.shields.io/badge/cookiecutter-Wolt-00c2e8?style=flat-square&logo=cookiecutter&logoColor=D4AA00&link=https://github.com/woltapp/wolt-python-package-cookiecutter)](https://github.com/woltapp/wolt-python-package-cookiecutter)
 
 
@@ -12,7 +12,7 @@
 
 **Source Code**: [https://github.com/Michael-Cohen/ppt](https://github.com/Michael-Cohen/ppt)
 
-**PyPI**: [https://pypi.org/project/ppt/](https://pypi.org/project/ppt/)
+**PyPI**: [https://pypi.org/project/pptm/](https://pypi.org/project/pptm/)
 
 ---
 
@@ -21,7 +21,7 @@ A short description of the project
 ## Installation
 
 ```sh
-pip install ppt
+pip install pptm
 ```
 
 ## Development
