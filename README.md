@@ -93,6 +93,11 @@ Or if you want e.g. want to run all checks manually for all files:
 pre-commit run --all-files
 ```
 
+Because the pre-commit includes a hook for commit messages (`commitizen`), you should also run:
+```sh
+pre-commit install --hook-type commit-msg 
+```
+
 ---
 
 This project was generated using the [wolt-python-package-cookiecutter](https://github.com/woltapp/wolt-python-package-cookiecutter) template.
