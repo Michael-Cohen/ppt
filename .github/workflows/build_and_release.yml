@@ -7,23 +7,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-distribute:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/python-poetry-env
-
-      - name: Distribute to pypi
-        run: |
-          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry publish --build --no-interaction
-
-      - name: Deploy docs
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        run: poetry run mkdocs gh-deploy --force
-
-
   build-and-release:
     runs-on: ubuntu-latest
     steps:
@@ -35,6 +18,8 @@ jobs:
       # Set up Python, install Poetry and install package:
       - uses: ./.github/actions/python-poetry-env
 
+      # if the repository is part of an organization, you can select "Restrict who can dismiss pull request reviews".
+      # See: https://www.paulmowat.co.uk/blog/resolve-github-action-gh006-protected-branch-update-failed/.
       - name: Use Python Semantic Release to prepare release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
