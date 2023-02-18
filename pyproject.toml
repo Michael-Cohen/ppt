@@ -30,7 +30,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.8, <4.0"
-numpy = "^1.24.2"
+numpy = "^1.22"
 
 [tool.poetry.dev-dependencies]
 autoflake = "*"
