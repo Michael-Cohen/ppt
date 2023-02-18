@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.3 (2023-02-18)
+### Fix
+* Change commitizen config ([`8671b34`](https://github.com/Michael-Cohen/ppt/commit/8671b349511e89b25b5e1c3ffac8ceaf178c5b61))
+
+### Documentation
+* Add commitizen installation ([`7adc0ef`](https://github.com/Michael-Cohen/ppt/commit/7adc0ef79c0d0109cfafe7ad255ac1fba9bb47ad))
+
 ## v0.1.2 (2023-02-18)
 ### Fix
 * Changed trigger event ([`de4f35a`](https://github.com/Michael-Cohen/ppt/commit/de4f35a03f5e2c5bf5e485c43239cf0304e50459))
