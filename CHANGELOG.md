@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.1 (2023-02-18)
+### Fix
+* Random change ([`5dc5c76`](https://github.com/Michael-Cohen/ppt/commit/5dc5c761afc6cb4802a00a26154291bbbc3f90f9))
+
 ## v0.1.0 (2023-02-18)
 ### Feature
 * Added build_and_release ([`506144b`](https://github.com/Michael-Cohen/ppt/commit/506144b22e28fcda095e823eb3d60a757391d274))
