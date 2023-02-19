@@ -1,6 +1,9 @@
 name: Distribute and deploy docs
 
 on:
+  # At "push time" (when dev is merged to main), the version is not bumped yet, so it is impossible
+  # to distribute a new version. Error: "File already exists".
+  # SOLUTION: incorporate these steps to the build_and_release workflow (similar to "Properties")
   push:
     branches: [ main ]
   # Release are automated while events triggered by the GITHUB_TOKEN do not create a new workflow run.
@@ -16,12 +19,3 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/python-poetry-env
 
-      - name: Distribute to pypi
-        run: |
-          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry publish --build --no-interaction
-
-      - name: Deploy docs
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        run: poetry run mkdocs gh-deploy --force
