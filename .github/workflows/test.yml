@@ -1,9 +1,9 @@
 name: Test
 
 on:
-  # Testing on pull requests is useless if all branches are already testes when pushed.
-  # 
-  pull_request:
+  # Testing on pull requests is redundant if all branches are already tested when pushed.
+  # This is why the below line is currently commented.
+  # pull_request:
   push:
     # Is re-running the Test workflow on the main branch is redundant?
     # branches:
