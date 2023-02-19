@@ -5,7 +5,8 @@ on:
   push:
     # Is re-running the Test workflow on the main branch is redundant?
     # branches:
-    #  - '!main'
+    #   - '*'
+    #   - '!main'
 
 jobs:
   actionlint:

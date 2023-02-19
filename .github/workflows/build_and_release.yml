@@ -1,14 +1,23 @@
 name: Build and release
 
 on:
-  push:
+  workflow_run:
+    # Set the trigger workflow:
+    workflows: [ "Test" ]
+    # Set the trigger branch:
     branches: [ main ]
+    # Set the trigger activity (regardless of the workflow success ):
+    types: [ completed ]
+  # push:
+  #   branches: [ main ]
   # Allow this workflow to be run manually:
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    # Only run if (a) "Test" workflow was successful, and (b) main branch, and (c) push event:
+    if: ${{ (github.event.workflow_run.conclusion == 'success') && (github.ref == 'refs/heads/main') && (github.event_name == 'push') }}
     steps:
       # Check-out the repository so that the job can access it and set up Python:
       - uses: actions/checkout@v3
@@ -22,13 +31,15 @@ jobs:
       # See: https://www.paulmowat.co.uk/blog/resolve-github-action-gh006-protected-branch-update-failed/.
       # In other cases, remove branch protection.
       - name: Use Python Semantic Release to prepare release
+        id: semantic-release-publish
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAT: ${{ secrets.BUMP_VERSION_TOKEN }}
         # See: https://python-semantic-release.readthedocs.io/en/latest/#semantic-release-publish
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
+            echo "next_pkg_version==$'(semantic-release print-version)'" >> "$GITHUB_OUTPUT"
             poetry run semantic-release publish
 
       - name: Test install from GitHub
@@ -37,13 +48,13 @@ jobs:
             pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"
 
       - name: Distribute to pypi
-      # todo: Condition this step to the actual release of a new version
+        if: ${{ 'steps.semantic-release-publish.outputs.next_pkg_version' != '' }}
         run: |
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
 
       - name: Deploy docs
-      # todo: Condition this step to the actual release of a new version
+        if: ${{ 'steps.semantic-release-publish.outputs.next_pkg_version' != '' }}
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: poetry run mkdocs gh-deploy --force
