@@ -34,3 +34,14 @@ jobs:
         run: |
             new_pkg_version="$(poetry version | awk -F '[ =]+' '{print $2}')"
             pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"
+
+      - name: Distribute to pypi
+        run: |
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry publish --build --no-interaction
+
+      - name: Deploy docs
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: poetry run mkdocs gh-deploy --force
+        
