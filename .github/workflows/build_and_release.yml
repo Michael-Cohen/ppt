@@ -25,6 +25,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAT: ${{ secrets.BUMP_VERSION_TOKEN }}
+        # See: https://python-semantic-release.readthedocs.io/en/latest/#semantic-release-publish
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
@@ -36,12 +37,13 @@ jobs:
             pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"
 
       - name: Distribute to pypi
+      # todo: Condition this step to the actual release of a new version
         run: |
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
 
       - name: Deploy docs
+      # todo: Condition this step to the actual release of a new version
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: poetry run mkdocs gh-deploy --force
-        
