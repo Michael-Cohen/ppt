@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.8 (2023-02-19)
+### Fix
+* Cicd ([`25789db`](https://github.com/Michael-Cohen/ppt/commit/25789db7951524ac299d3f845cd9efc6073d4f26))
+
 ## v0.1.7 (2023-02-19)
 ### Fix
 * Cicd ([`c942d15`](https://github.com/Michael-Cohen/ppt/commit/c942d1597f374334d9a89feea0b33e7b01c1af8b))
