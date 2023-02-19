@@ -1,16 +1,16 @@
 import numpy as np
 
 
-def say_hello_with_message(msg: str) -> str:
+def say_hello_with_message(m: str) -> str:
     """Awesome function to say hello with message.
 
     Args:
-        msg (str): The message of your dreams.
+        m (str): The message of your dreams.
 
     Returns:
         str: The standard sentence with your message.
     """
-    return f"hello, the message is: {msg}"
+    return f"hello, the message is: {m}"
 
 
 def wow(quantity: float) -> str:
