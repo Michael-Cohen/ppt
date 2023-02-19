@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.6 (2023-02-19)
+### Fix
+* Cicd ([`42b31b7`](https://github.com/Michael-Cohen/ppt/commit/42b31b7c625ce773433277cba1b14c15f00df4c0))
+* Add more quotes ([`fc12a24`](https://github.com/Michael-Cohen/ppt/commit/fc12a2448969d9da7d8f8c327105429228e5de00))
+* Add quotes ([`1ebf19e`](https://github.com/Michael-Cohen/ppt/commit/1ebf19e9de6f157b3281a187ac5ed694caaa7ff6))
+* Deploy only if new version and condition on Test success ([`c83813b`](https://github.com/Michael-Cohen/ppt/commit/c83813b79695d540007a318e45b18741d5cf5e3f))
+
 ## v0.1.5 (2023-02-19)
 ### Fix
 * Random fix to bump version ([`4049ccc`](https://github.com/Michael-Cohen/ppt/commit/4049ccc49c78937fae48b63f839657fc304f3117))
