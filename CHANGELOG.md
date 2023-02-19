@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.4 (2023-02-19)
+### Fix
+* Random fix to bump version ([`56e19cf`](https://github.com/Michael-Cohen/ppt/commit/56e19cf37e65ead6fa9ad95259701bd9f4ab783f))
+
 ## v0.1.3 (2023-02-18)
 ### Fix
 * Change commitizen config ([`8671b34`](https://github.com/Michael-Cohen/ppt/commit/8671b349511e89b25b5e1c3ffac8ceaf178c5b61))
