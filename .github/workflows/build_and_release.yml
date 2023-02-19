@@ -39,7 +39,7 @@ jobs:
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
-            echo "next_pkg_version==$(semantic-release print-version)" >> $GITHUB_OUTPUT
+            echo "next_pkg_version==$'(semantic-release print-version)'" >> $GITHUB_OUTPUT
             poetry run semantic-release publish
 
       - name: Test install from GitHub
@@ -48,13 +48,13 @@ jobs:
             pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"
 
       - name: Distribute to pypi
-        if: ${{ "steps.semantic-release-publish.outputs.next_pkg_version" != "" }}
+        if: ${{ 'steps.semantic-release-publish.outputs.next_pkg_version' != '' }}
         run: |
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
 
       - name: Deploy docs
-        if: ${{ "steps.semantic-release-publish.outputs.next_pkg_version" != "" }}
+        if: ${{ 'steps.semantic-release-publish.outputs.next_pkg_version' != '' }}
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: poetry run mkdocs gh-deploy --force
