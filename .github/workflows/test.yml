@@ -1,6 +1,8 @@
 name: Test
 
 on:
+  # Testing on pull requests is useless if all branches are already testes when pushed.
+  # 
   pull_request:
   push:
     # Is re-running the Test workflow on the main branch is redundant?
