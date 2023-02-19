@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.7 (2023-02-19)
+### Fix
+* Cicd ([`c942d15`](https://github.com/Michael-Cohen/ppt/commit/c942d1597f374334d9a89feea0b33e7b01c1af8b))
+* Cicd ([`573532a`](https://github.com/Michael-Cohen/ppt/commit/573532a0d219569aeeb615e03deffbfd6537a67b))
+
+### Documentation
+* Add a comment ([`ce54659`](https://github.com/Michael-Cohen/ppt/commit/ce546590b9d755d2e97848598a7ab3116c62bf87))
+
 ## v0.1.6 (2023-02-19)
 ### Fix
 * Cicd ([`42b31b7`](https://github.com/Michael-Cohen/ppt/commit/42b31b7c625ce773433277cba1b14c15f00df4c0))
