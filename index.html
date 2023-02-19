@@ -504,6 +504,9 @@
 <p>Or if you want e.g. want to run all checks manually for all files:</p>
 <pre><code class="language-sh">pre-commit run --all-files
 </code></pre>
+<p>Because the pre-commit includes a hook for commit messages (<code>commitizen</code>), you should also run:</p>
+<pre><code class="language-sh">pre-commit install --hook-type commit-msg 
+</code></pre>
 <hr />
 <p>This project was generated using the <a href="https://github.com/woltapp/wolt-python-package-cookiecutter">wolt-python-package-cookiecutter</a> template.</p>
 
