@@ -53,6 +53,7 @@ jobs:
       - name: Distribute to pypi
         if: ${{ 'steps.semantic-release-publish.outputs.next_pkg_version' != '' }}
         run: |
+          echo ${{ 'steps.semantic-release-publish.outputs.next_pkg_version' }}
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
 
