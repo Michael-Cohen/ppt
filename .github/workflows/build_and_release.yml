@@ -43,9 +43,6 @@ jobs:
             git config user.name github-actions
             git config user.email github-actions@github.com
             echo "next_pkg_version='$(semantic-release print-version)'" >> "$GITHUB_OUTPUT"
-
-            if [ -z "$next_pkg_version" ]; then echo "next_pkg_version is equal to empty string"; else echo "warning: next_pkg_version is equal to $next_pkg_version"; fi
-            
             poetry run semantic-release publish
 
       - name: Test install from GitHub
@@ -54,7 +51,6 @@ jobs:
             pip install "git+https://github.com/Michael-Cohen/ppt.git@v$new_pkg_version"
 
       - name: Distribute to pypi
-        # if: ${{ steps.semantic-release-publish.outputs.next_pkg_version != '' }}
         # Only distribute if next_pkg_version is not the empty string
         run: |
           if [ -n ${{ steps.semantic-release-publish.outputs.next_pkg_version }} ]; then
@@ -64,15 +60,7 @@ jobs:
               echo "next_pkg_version is the empty string, no distribution to pypi"
           fi
 
-          
-          #x=${{ steps.semantic-release-publish.outputs.next_pkg_version }}
-          #if [ -z "$x" ]; then echo "next_pkg_version is equal to empty string"; else echo "WARNING: next_pkg_version is equal to: $x"; fi
-          
-          
-          
-
       - name: Deploy docs
-        # if: ${{ steps.semantic-release-publish.outputs.next_pkg_version != '' }}
         # Only deploy if next_pkg_version is not the empty string
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
