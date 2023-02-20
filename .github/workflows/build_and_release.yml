@@ -57,7 +57,7 @@ jobs:
         # if: ${{ steps.semantic-release-publish.outputs.next_pkg_version != '' }}
         # Only distribute if next_pkg_version is not the empty string
         run: |
-          if [ -n "${{ steps.semantic-release-publish.outputs.next_pkg_version }}" ]; then
+          if [ -n ${{ steps.semantic-release-publish.outputs.next_pkg_version }} ]; then
               poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
               poetry publish --build --no-interaction
           else
@@ -77,7 +77,7 @@ jobs:
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -n "${{ steps.semantic-release-publish.outputs.next_pkg_version }}" ]; then
+          if [ -n ${{ steps.semantic-release-publish.outputs.next_pkg_version }} ]; then
               poetry run mkdocs gh-deploy --force
           else
               echo "next_pkg_version is the empty string, no doc to deploy"
