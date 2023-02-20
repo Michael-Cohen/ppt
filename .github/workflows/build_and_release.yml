@@ -42,7 +42,7 @@ jobs:
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
-            echo "next_pkg_version=$'(semantic-release print-version)'" >> "$GITHUB_OUTPUT"
+            echo "next_pkg_version='$(semantic-release print-version)'" >> "$GITHUB_OUTPUT"
             if [ "$next_pkg_version" -eq "" ]; then echo "next_pkg_version is equal to empty string"; else echo "warning: next_pkg_version is equal to $next_pkg_version"; fi
             poetry run semantic-release publish
 
@@ -55,7 +55,7 @@ jobs:
         if: ${{ steps.semantic-release-publish.outputs.next_pkg_version != '' }}
         run: |
           x=${{ steps.semantic-release-publish.outputs.next_pkg_version }}
-          if [ "$x" -eq "" ]; then echo "next_pkg_version is equal to empty string"; else echo "WARNING: next_pkg_version is equal to $x"; fi
+          if [ "$x" -eq "" ]; then echo "next_pkg_version is equal to empty string"; else echo "WARNING: next_pkg_version is equal to: $x"; fi
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
 
