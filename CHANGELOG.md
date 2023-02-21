@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.9 (2023-02-20)
+### Fix
+* Correct condition for distribute to pypi ([`a372d6d`](https://github.com/Michael-Cohen/ppt/commit/a372d6d15387ab5f6503f9268712d79b2deed5d3))
+
 ## v0.1.8 (2023-02-19)
 ### Fix
 * Cicd ([`25789db`](https://github.com/Michael-Cohen/ppt/commit/25789db7951524ac299d3f845cd9efc6073d4f26))
