@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import numpy as np
 
 
@@ -10,7 +12,8 @@ def say_hello_with_message(msg: str) -> str:
     Returns:
         str: The standard sentence with your message.
     """
-    return f"hello, the message is: {msg}"
+    current_time = datetime.utcnow().strftime("%Y-%m-%d %H-%M-%S") + "-UTC"
+    return f"Hello, the message is: {msg}. The current time is: {current_time}."
 
 
 def wow(quantity: float) -> str:

@@ -4,7 +4,7 @@ from pptm.salut import say_hello_with_message, wow
 
 
 def test_say_hello_with_message() -> None:
-    assert say_hello_with_message("salut!") == "hello, the message is: salut!"
+    assert say_hello_with_message("salut!").startswith("Hello, the message is: salut!")
 
 
 @pytest.mark.parametrize(
