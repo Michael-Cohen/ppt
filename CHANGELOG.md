@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2023-02-22)
+### Feature
+* Add a CLI entry ([`650fffc`](https://github.com/Michael-Cohen/ppt/commit/650fffcc38c4c8cbb3ef03304b12f2fa48048d40))
+
 ## v0.1.9 (2023-02-20)
 ### Fix
 * Correct condition for distribute to pypi ([`a372d6d`](https://github.com/Michael-Cohen/ppt/commit/a372d6d15387ab5f6503f9268712d79b2deed5d3))
