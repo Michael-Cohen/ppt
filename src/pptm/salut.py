@@ -1,3 +1,4 @@
+import sys
 from datetime import datetime
 
 import numpy as np
@@ -19,3 +20,15 @@ def say_hello_with_message(msg: str) -> str:
 def wow(quantity: float) -> str:
     """Diplays a Numpy array with one element."""
     return f"Numpy result: {np.array([quantity])}"
+
+
+def run() -> None:
+    # Read arguments:
+    input_msg = sys.argv[1]
+
+    # Execute function:
+    print(say_hello_with_message(input_msg))
+
+
+if __name__ == "__main__":  # pragma: no cover
+    run()
