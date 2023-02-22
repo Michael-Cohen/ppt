@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-02-22)
+### Fix
+* Ensure semantic-release installed ([`2765e02`](https://github.com/Michael-Cohen/ppt/commit/2765e026bf5757aa4b062982bdedd17e21f0200c))
+
 ## v0.2.0 (2023-02-22)
 ### Feature
 * Add a CLI entry ([`650fffc`](https://github.com/Michael-Cohen/ppt/commit/650fffcc38c4c8cbb3ef03304b12f2fa48048d40))
