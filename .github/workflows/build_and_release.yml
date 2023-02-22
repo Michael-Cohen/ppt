@@ -40,6 +40,7 @@ jobs:
           PAT: ${{ secrets.BUMP_VERSION_TOKEN }}
         # See: https://python-semantic-release.readthedocs.io/en/latest/#semantic-release-publish
         run: |
+            poetry add python-semantic-release
             git config user.name github-actions
             git config user.email github-actions@github.com
             echo "next_pkg_version='$(semantic-release print-version)'" >> "$GITHUB_OUTPUT"
