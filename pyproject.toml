@@ -58,6 +58,8 @@ pyupgrade = "*"
 tryceratops = "*"
 
 python-semantic-release = "^7.33.1"
+ipykernel = "^6.21.2"
+matplotlib = "^3.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
