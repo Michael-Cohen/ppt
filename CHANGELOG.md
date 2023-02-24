@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2023-02-22)
+### Fix
+* Run semantic-release via poetry ([`1bbaff1`](https://github.com/Michael-Cohen/ppt/commit/1bbaff1bc8b7a7abc6d631d2370f9cc8ce245c74))
+* Run semantic-release via poetry ([`09f62dd`](https://github.com/Michael-Cohen/ppt/commit/09f62dd7353855254b47153bb9289b3929a74bd8))
+
 ## v0.2.1 (2023-02-22)
 ### Fix
 * Ensure semantic-release installed ([`2765e02`](https://github.com/Michael-Cohen/ppt/commit/2765e026bf5757aa4b062982bdedd17e21f0200c))
