@@ -6,7 +6,9 @@ from pptm.salut import run, say_hello_with_message, wow
 
 
 def test_say_hello_with_message() -> None:
-    assert say_hello_with_message("salut!").startswith("Hello, the message is: salut!")
+    assert say_hello_with_message("salut!").startswith(
+        "Hello, Sir. The message is: salut!"
+    )
 
 
 @pytest.mark.parametrize(
@@ -36,4 +38,4 @@ def test_run(monkeypatch, capsys) -> None:
     captured = capsys.readouterr()
 
     # Check output:
-    assert captured.out.startswith(f"Hello, the message is: {input_msg}")
+    assert captured.out.startswith(f"Hello, Sir. The message is: {input_msg}")

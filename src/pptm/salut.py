@@ -14,7 +14,7 @@ def say_hello_with_message(msg: str) -> str:
         str: The standard sentence with your message.
     """
     current_time = datetime.utcnow().strftime("%Y-%m-%d %H-%M-%S") + "-UTC"
-    return f"Hello, the message is: {msg}. The current time is: {current_time}."
+    return f"Hello, Sir. The message is: {msg}. The current time is: {current_time}."
 
 
 def wow(quantity: float) -> str:
